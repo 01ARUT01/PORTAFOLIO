@@ -1,0 +1,593 @@
+/* ═══════════════════════════════════════════════
+   PORTAFOLIO PERSONAL — Estilos y Animaciones
+   ═══════════════════════════════════════════════ */
+
+@font-face {
+  font-display: block; font-family: Mori; font-style: normal; font-weight: 400;
+  src: url(https://assets.codepen.io/16327/PPMori-Regular.woff) format("woff");
+}
+@font-face {
+  font-display: block; font-family: Mori; font-style: normal; font-weight: 600;
+  src: url(https://assets.codepen.io/16327/PPMori-SemiBold.woff) format("woff");
+}
+@font-face {
+  font-display: block; font-family: Fraktion Mono; font-style: normal; font-weight: 400;
+  src: url(https://assets.codepen.io/16327/PPFraktionMono-Bold.woff) format("woff");
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green: #0ae448;
+  --lt-green: #abff84;
+  --dark: #0e100f;
+  --light: #fffce1;
+  --pink: #fec5fb;
+  --shock-pink: #f100cb;
+  --orange: #ff8709;
+  --lilac: #9d95ff;
+  --blue: #00bae2;
+  --grey: #191919;
+  --surface75: #bbbaa6;
+  --surface50: #7c7c6f;
+  --surface25: #42433d;
+}
+
+html {
+  width: 100%; height: 100%;
+  background: var(--dark);
+  font-family: Mori, sans-serif;
+  color: var(--light);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%; min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 0;
+  gap: 0;
+  background: var(--dark);
+  font-family: Mori, sans-serif;
+  color: var(--light);
+  overflow-x: hidden;
+}
+
+/* ═══════════ PANTALLA DE CARGA ═══════════ */
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+.loader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+.loader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.loader-circle {
+  width: 60px;
+  height: 60px;
+  border: 4px solid var(--surface25);
+  border-top-color: var(--green);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.loader-text {
+  display: flex;
+  gap: 4px;
+  font-family: Fraktion Mono, monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--surface50);
+  text-transform: uppercase;
+}
+.loader-text span {
+  display: inline-block;
+  animation: letterPulse 1.2s ease-in-out infinite;
+}
+.loader-text span:nth-child(1) { animation-delay: 0s; }
+.loader-text span:nth-child(2) { animation-delay: 0.1s; }
+.loader-text span:nth-child(3) { animation-delay: 0.2s; }
+.loader-text span:nth-child(4) { animation-delay: 0.3s; }
+.loader-text span:nth-child(5) { animation-delay: 0.4s; }
+.loader-text span:nth-child(6) { animation-delay: 0.5s; }
+.loader-text span:nth-child(7) { animation-delay: 0.6s; }
+.loader-text span:nth-child(8) { animation-delay: 0.7s; }
+
+@keyframes letterPulse {
+  0%, 100% { color: var(--surface25); transform: translateY(0); }
+  50% { color: var(--green); transform: translateY(-6px); }
+}
+
+/* ═══════════ CONTENIDO PRINCIPAL ═══════════ */
+.main-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 24px 80px;
+  gap: 60px;
+  transition: opacity 0.8s ease;
+}
+.main-content.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ═══════════ HEADER ═══════════ */
+.header {
+  text-align: center;
+  max-width: 600px;
+  animation: slideDown 0.8s ease both;
+}
+.header h1 {
+  font-weight: 600;
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  color: var(--light);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+.header p {
+  font-size: 0.9rem;
+  color: var(--surface50);
+  line-height: 1.55;
+}
+.header code {
+  font-family: Fraktion Mono, monospace;
+  font-size: 0.8em;
+  color: var(--green);
+  background: rgba(10,228,72,0.08);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════ SECCIONES ═══════════ */
+.section {
+  width: 100%;
+  max-width: 820px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.section-title {
+  font-family: Fraktion Mono, monospace;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--surface50);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  position: relative;
+  padding-bottom: 10px;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: var(--green);
+  border-radius: 1px;
+}
+
+/* ═══════════ FADE-IN SECTIONS ═══════════ */
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════ SOBRE MI ═══════════ */
+.about-card {
+  width: 100%;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  background: var(--grey);
+  border: 1px solid var(--surface25);
+  border-radius: 16px;
+  padding: 30px;
+}
+.about-photo {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.photo-frame {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--dark);
+  position: relative;
+}
+.photo-frame::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px dashed var(--surface25);
+  animation: rotateDashed 12s linear infinite;
+}
+@keyframes rotateDashed {
+  to { transform: rotate(360deg); }
+}
+.photo-placeholder {
+  font-family: Fraktion Mono, monospace;
+  font-size: 0.7rem;
+  color: var(--surface25);
+  text-transform: uppercase;
+}
+.photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.sena-badge {
+  font-family: Fraktion Mono, monospace;
+  font-size: 0.55rem;
+  color: var(--green);
+  background: rgba(10,228,72,0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(10,228,72,0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.about-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.about-info h3 {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--light);
+}
+.about-info p {
+  font-size: 0.85rem;
+  color: var(--surface50);
+  line-height: 1.65;
+}
+.about-info code {
+  font-family: Fraktion Mono, monospace;
+  font-size: 0.82em;
+  color: var(--green);
+  background: rgba(10,228,72,0.08);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+.about-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ═══════════ TAGS ═══════════ */
+.tag {
+  font-family: Fraktion Mono, monospace;
+  font-size: 0.55rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.tag-green { color: var(--green); background: rgba(10,228,72,0.1); border: 1px solid rgba(10,228,72,0.2); }
+.tag-blue { color: var(--blue); background: rgba(0,186,226,0.1); border: 1px solid rgba(0,186,226,0.2); }
+.tag-lilac { color: var(--lilac); background: rgba(157,149,255,0.1); border: 1px solid rgba(157,149,255,0.2); }
+.tag-orange { color: var(--orange); background: rgba(255,135,9,0.1); border: 1px solid rgba(255,135,9,0.2); }
+.tag-pink { color: var(--pink); background: rgba(254,197,251,0.1); border: 1px solid rgba(254,197,251,0.2); }
+
+/* ═══════════ EDUCACION ═══════════ */
+.edu-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.edu-card {
+  background: var(--grey);
+  border: 1px solid var(--surface25);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.edu-card:hover {
+  border-color: var(--green);
+  transform: translateY(-4px);
+}
+.edu-icon {
+  width: 40px;
+  height: 40px;
+}
+.edu-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.edu-card h3 {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--light);
+}
+.edu-place {
+  font-family: Fraktion Mono, monospace;
+  font-size: 0.65rem;
+  color: var(--surface50);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.edu-desc {
+  font-size: 0.82rem;
+  color: var(--surface50);
+  line-height: 1.55;
+}
+.edu-badge {
+  font-family: Fraktion Mono, monospace;
+  font-size: 0.55rem;
+  color: var(--orange);
+  background: rgba(255,135,9,0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,135,9,0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  align-self: flex-start;
+}
+.edu-badge.badge-done {
+  color: var(--green);
+  background: rgba(10,228,72,0.1);
+  border-color: rgba(10,228,72,0.2);
+}
+
+/* ═══════════ HABILIDADES ═══════════ */
+.skills-grid {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  pointer-events: none;
+}
+.skills-grid .stage-label {
+  font-family: Fraktion Mono, monospace;
+  font-size: 0.54rem;
+  color: var(--surface25);
+  position: absolute;
+  bottom: -24px;
+  right: 14px;
+  pointer-events: none;
+}
+
+/* ═══════════ CARD (GSAP) ═══════════ */
+.card {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  rotate: var(--r, 0deg);
+  background: transparent;
+  border: none;
+  border-radius: 16px;
+  transform-origin: center center;
+  pointer-events: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.skill-card-inner {
+  background: var(--grey);
+  border: 1px solid var(--surface25);
+  border-radius: 16px;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 260px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.skill-card-inner:hover {
+  border-color: var(--green);
+  box-shadow: 0 0 30px rgba(10,228,72,0.08);
+}
+.skill-card-inner h3 {
+  font-family: Mori, sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--light);
+}
+.skill-bar {
+  width: 100%;
+  height: 6px;
+  background: var(--surface25);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.skill-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--green);
+  border-radius: 3px;
+  transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.skill-fill.bar-blue { background: var(--blue); }
+.skill-fill.bar-orange { background: var(--orange); }
+.skill-fill.bar-pink { background: var(--pink); }
+.skill-pct {
+  font-family: Fraktion Mono, monospace;
+  font-size: 0.6rem;
+  color: var(--green);
+}
+.skill-card-inner:nth-child(1) .skill-pct { color: var(--green); }
+.skill-card-inner:nth-child(2) .skill-pct { color: var(--blue); }
+.skill-card-inner:nth-child(3) .skill-pct { color: var(--orange); }
+.skill-card-inner:nth-child(4) .skill-pct { color: var(--pink); }
+
+/* ═══════════ PROYECTOS ═══════════ */
+.projects-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.project-card {
+  background: var(--grey);
+  border: 1px solid var(--surface25);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  cursor: default;
+}
+.project-card:hover {
+  border-color: var(--lilac);
+  transform: translateY(-4px);
+}
+.project-icon {
+  width: 40px;
+  height: 40px;
+}
+.project-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.project-card h3 {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--light);
+}
+.project-card p {
+  font-size: 0.82rem;
+  color: var(--surface50);
+  line-height: 1.55;
+}
+.project-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+/* ═══════════ CONTACTO ═══════════ */
+.contact-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--grey);
+  border: 1px solid var(--surface25);
+  border-radius: 16px;
+  padding: 24px 28px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.contact-card:hover {
+  border-color: var(--green);
+  transform: translateY(-4px);
+}
+.contact-card svg {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+.contact-label {
+  font-family: Fraktion Mono, monospace;
+  font-size: 0.55rem;
+  color: var(--surface50);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.contact-value {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--light);
+}
+
+/* ═══════════ FOOTER ═══════════ */
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 30px 24px;
+  border-top: 1px solid var(--surface25);
+  margin-top: 20px;
+}
+.footer p {
+  font-family: Fraktion Mono, monospace;
+  font-size: 0.6rem;
+  color: var(--surface25);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ═══════════ RESPONSIVE ═══════════ */
+@media (max-width: 640px) {
+  .about-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-tags {
+    justify-content: center;
+  }
+  .photo-frame {
+    width: 130px;
+    height: 130px;
+  }
+  .skills-grid {
+    height: 600px;
+  }
+  .skill-card-inner {
+    width: 220px;
+    padding: 18px 20px;
+  }
+  .card {
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+  .card:nth-child(1) { top: 0 !important; }
+  .card:nth-child(2) { top: 150px !important; }
+  .card:nth-child(3) { top: 300px !important; }
+  .card:nth-child(4) { top: 450px !important; }
+  .edu-grid,
+  .projects-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

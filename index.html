@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Portafolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════ PANTALLA DE CARGA ═══════════ -->
+  <div id="loader" class="loader">
+    <div class="loader-inner">
+      <div class="loader-circle"></div>
+      <div class="loader-text">
+        <span>C</span><span>A</span><span>R</span><span>G</span><span>A</span><span>N</span><span>D</span><span>O</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ CONTENIDO PRINCIPAL ═══════════ -->
+  <main id="main-content" class="main-content hidden">
+
+    <!-- ── HEADER ── -->
+    <header class="header">
+      <h1>Mi Portafolio Personal</h1>
+      <p>Aprendiz de <code>SENA</code> | Analisis y Desarrollo de Software</p>
+    </header>
+
+    <!-- ── SOBRE MI ── -->
+    <section id="sobremi" class="section fade-section">
+      <h2 class="section-title">Sobre Mi</h2>
+      <div class="about-card">
+        <div class="about-photo">
+          <div class="photo-frame">
+            <img src="img/foto.jpeg" alt="Foto de perfil" class="photo-img" />
+          </div>
+          <span class="sena-badge">Aprendiz SENA</span>
+        </div>
+        <div class="about-info">
+          <h3>Camilo</h3>
+          <p>
+            Soy un aprendiz del <code>SENA</code> apasionado por el desarrollo de software.
+            Me encanta crear soluciones tecnologicas que resuelvan problemas reales.
+            Actualmente estoy cursando Analisis y Desarrollo de Software,
+            donde he adquirido conocimientos en multiples lenguajes de programacion
+            y bases de datos.
+          </p>
+          <div class="about-tags">
+            <span class="tag tag-green">SENA</span>
+            <span class="tag tag-blue">ADS</span>
+            <span class="tag tag-lilac">Desarrollador</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EDUCACION ── -->
+    <section id="educacion" class="section fade-section">
+      <h2 class="section-title">Educacion y Formacion</h2>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <div class="edu-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3>Analisis y Desarrollo de Software</h3>
+          <p class="edu-place">SENA</p>
+          <p class="edu-desc">Formacion tecnica en desarrollo de software, programacion, bases de datos y metodologias agiles.</p>
+          <span class="edu-badge">En curso</span>
+        </div>
+        <div class="edu-card">
+          <div class="edu-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2">
+              <ellipse cx="12" cy="5" rx="9" ry="3"/>
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+            </svg>
+          </div>
+          <h3>SQL y Base de Datos</h3>
+          <p class="edu-place">Curso Especializado</p>
+          <p class="edu-desc">Curso especializado en manejo de bases de datos SQL, consultas avanzadas, normalizacion y administracion de datos.</p>
+          <span class="edu-badge badge-done">Completado</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HABILIDADES ── -->
+    <section id="habilidades" class="section fade-section">
+      <h2 class="section-title">Habilidades Tecnicas</h2>
+      <div class="skills-grid" id="stage">
+        <div class="card" style="--x: 12%; --y: 20px; --r: -2deg;">
+          <div class="skill-card-inner">
+            <h3>HTML</h3>
+            <div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div>
+            <span class="skill-pct">82%</span>
+          </div>
+        </div>
+        <div class="card" style="--x: 55%; --y: 20px; --r: 1deg;">
+          <div class="skill-card-inner">
+            <h3>CSS</h3>
+            <div class="skill-bar"><div class="skill-fill bar-blue" data-pct="80"></div></div>
+            <span class="skill-pct">80%</span>
+          </div>
+        </div>
+        <div class="card" style="--x: 12%; --y: 180px; --r: 1.5deg;">
+          <div class="skill-card-inner">
+            <h3>JavaScript</h3>
+            <div class="skill-bar"><div class="skill-fill bar-orange" data-pct="78"></div></div>
+            <span class="skill-pct">78%</span>
+          </div>
+        </div>
+        <div class="card" style="--x: 55%; --y: 180px; --r: -1deg;">
+          <div class="skill-card-inner">
+            <h3>C++</h3>
+            <div class="skill-bar"><div class="skill-fill bar-pink" data-pct="62"></div></div>
+            <span class="skill-pct">62%</span>
+          </div>
+        </div>
+        <span class="stage-label">mueve el cursor sobre las tarjetas</span>
+      </div>
+    </section>
+
+    <!-- ── PROYECTOS ── -->
+    <section id="proyectos" class="section fade-section">
+      <h2 class="section-title">Proyectos</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <h3>Pagina Web de Turismo</h3>
+          <p>Desarrollo de una pagina web informativa sobre destinos turisticos con disenio responsivo y navegacion intuitiva.</p>
+          <div class="project-tags">
+            <span class="tag tag-green">HTML</span>
+            <span class="tag tag-blue">CSS</span>
+            <span class="tag tag-lilac">JS</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--lilac)" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              <circle cx="9" cy="10" r="1" fill="var(--lilac)"/>
+              <circle cx="12" cy="10" r="1" fill="var(--lilac)"/>
+              <circle cx="15" cy="10" r="1" fill="var(--lilac)"/>
+            </svg>
+          </div>
+          <h3>Asistente Virtual</h3>
+          <p>Desarrollo de un asistente virtual con interfaz interactiva para resolver preguntas frecuentes del usuario.</p>
+          <div class="project-tags">
+            <span class="tag tag-green">HTML</span>
+            <span class="tag tag-orange">JS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACTO ── -->
+    <section id="contacto" class="section fade-section">
+      <h2 class="section-title">Contacto</h2>
+      <div class="contact-grid">
+        <a href="tel:31667665519" class="contact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span class="contact-label">Telefono</span>
+          <span class="contact-value">316 676 65519</span>
+        </a>
+        <a href="mailto:tigrecamilo09@gmail.com" class="contact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="M22 4L12 13 2 4"/>
+          </svg>
+          <span class="contact-label">Correo</span>
+          <span class="contact-value">tigrecamilo09@gmail.com</span>
+        </a>
+        <a href="https://github.com/01ARUT01" target="_blank" class="contact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--lilac)" stroke-width="2">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">01ARUT01</span>
+        </a>
+        <a href="https://wa.me/5731667665519" target="_blank" class="contact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+          <span class="contact-label">WhatsApp</span>
+          <span class="contact-value">Contáctame</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+      <p>&copy; 2026 Camilo | Portafolio Personal</p>
+    </footer>
+
+  </main>
+
+  <!-- ═══════════ SCRIPTS ═══════════ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
